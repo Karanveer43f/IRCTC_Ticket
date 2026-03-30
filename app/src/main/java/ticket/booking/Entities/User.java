@@ -7,6 +7,18 @@ public class User {
     private String hashPassword;
     private List<Ticket> ticketsBooked;
     private String userId;
+    private String password;
+
+    public User() {
+    }
+
+    public User(String name, String hashPassword, List<Ticket> ticketsBooked, String userId, String password) {
+        this.name = name;
+        this.hashPassword = hashPassword;
+        this.ticketsBooked = ticketsBooked;
+        this.userId = userId;
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -38,5 +50,19 @@ public class User {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void printTickets(){
+        for(int i = 0 ; i < ticketsBooked.size();i++){
+            System.out.println(ticketsBooked.get(i).getTicketInfo());
+        }
     }
 }

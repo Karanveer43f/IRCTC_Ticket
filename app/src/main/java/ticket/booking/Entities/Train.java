@@ -8,6 +8,9 @@ import java.util.Map;
 public class Train {
     private String trainId;
     private String trainNo;
+    private List<List<Integer>> seats;
+    Map<String, String> stationTimes;
+    private List<String> stations;
 
     public List<List<Integer>> getSeats() {
         return seats;
@@ -33,11 +36,11 @@ public class Train {
         this.trainId = trainId;
     }
 
-    public Map<String, Time> getStationTimes() {
+    public Map<String, String> getStationTimes() {
         return stationTimes;
     }
 
-    public void setStationTimes(Map<String, Time> stationTimes) {
+    public void setStationTimes(Map<String, String> stationTimes) {
         this.stationTimes = stationTimes;
     }
 
@@ -49,8 +52,8 @@ public class Train {
         this.stations = stations;
     }
 
-    private List<List<Integer>> seats;
-    Map<String, Time> stationTimes;
-    private List<String> stations;
+    public String getTrainInfo(){
+        return String.format("Train ID: %s Train No: %s" , trainId , trainNo);
+    }
 
 }

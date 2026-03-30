@@ -1,11 +1,22 @@
 package ticket.booking.Entities;
 
-import java.util.Date;
-
 public class Ticket {
     private String ticketId;
     private String userId;
+    private String source;
+    private String destination;
+    private String dateOfTravel;
 
+    public Ticket(String ticketId, String userId, String source, String destination, String dateOfTravel, Train train) {
+        this.ticketId = ticketId;
+        this.userId = userId;
+        this.source = source;
+        this.destination = destination;
+        this.dateOfTravel = dateOfTravel;
+        this.train = train;
+    }
+
+    private Train train;
     public String getSource() {
         return source;
     }
@@ -38,12 +49,12 @@ public class Ticket {
         this.destination = destination;
     }
 
-    public Date getDateOfTravel() {
-        return DateOfTravel;
+    public String getDateOfTravel() {
+        return dateOfTravel;
     }
 
-    public void setDateOfTravel(Date dateOfTravel) {
-        DateOfTravel = dateOfTravel;
+    public void setDateOfTravel(String dateOfTravel) {
+        this.dateOfTravel = dateOfTravel;
     }
 
     public Train getTrain() {
@@ -54,9 +65,9 @@ public class Ticket {
         this.train = train;
     }
 
-    private String source;
-    private String destination;
-    private Date DateOfTravel;
+    public String getTicketInfo(){
+        return String.format("Ticked ID: %s belongs to User %s from %s to %s on %s " , ticketId, userId, source , destination , dateOfTravel);
+    }
 
-    private Train train;
+
 }
